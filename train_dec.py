@@ -42,14 +42,14 @@ beta_max = params.beta_max
 random_seed = params.seed
 test_size = params.test_size
 
-data_dir = '../data/LibriTTS'
+data_dir = '../data'
 val_file = 'filelists/valid.txt'
-exc_file = 'filelists/exceptions_libritts.txt'
+exc_file = 'filelists/exceptions_vctk.txt'
 
 log_dir = 'logs_dec'
 enc_dir = 'logs_enc'
-epochs = 110
-batch_size = 32
+epochs = 200
+batch_size = 8
 learning_rate = 1e-4
 save_every = 1
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     os.makedirs(log_dir, exist_ok=True)
 
     print('Initializing data loaders...')
-    train_set = VCDecDataset(data_dir, val_file, exc_file)
+    train_set = VCTKDecDataset(data_dir)
     collate_fn = VCDecBatchCollate()
     train_loader = DataLoader(train_set, batch_size=batch_size, 
                               collate_fn=collate_fn, num_workers=4, drop_last=True)

@@ -14,7 +14,7 @@ import torch
 from torch.utils.data import DataLoader
 
 import params
-from data import VCDecDataset, VCDecBatchCollate, VCTKDecDataset
+from data import VCDecBatchCollate, VCTKDecDataset
 from model.vc import DiffVC
 from model.utils import FastGL
 from utils import save_plot, save_audio

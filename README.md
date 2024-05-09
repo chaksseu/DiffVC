@@ -24,6 +24,7 @@ cd DiffVC
 conda create -n DiffVC python==3.6.13
 conda activate DiffVC
 pip install -r requirements.txt
+pip install torchaudio
 ```
 
 

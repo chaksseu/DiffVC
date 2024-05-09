@@ -68,9 +68,9 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 ## 디코더 학습
 
-train_dec.py 파일 실행
+`python train_dec.py`
 
 
 ## 모델 테스트 (오디오 생성)
 
-inference.ipynb 파일 실행
+inference.ipynb

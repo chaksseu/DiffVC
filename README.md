@@ -71,4 +71,4 @@ train_dec.py 파일 실행
 
 ## 모델 테스트 (오디오 생성)
 
-inference.ipynb 파일을 통해, 학습시킨 모델을 이용하여 변환된 음성을 얻을 수 있습니다. 
+inference.ipynb 파일 실행

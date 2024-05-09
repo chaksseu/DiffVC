@@ -14,7 +14,7 @@ import torch
 from torch.utils.data import DataLoader
 
 import params
-from data import VCDecDataset, VCDecBatchCollate
+from data import VCDecDataset, VCDecBatchCollate, VCTKDecDataset
 from model.vc import DiffVC
 from model.utils import FastGL
 from utils import save_plot, save_audio
@@ -51,7 +51,7 @@ enc_dir = 'logs_enc'
 epochs = 200
 batch_size = 8
 learning_rate = 1e-4
-save_every = 1
+save_every = 10
 
 
 if __name__ == "__main__":

@@ -23,8 +23,9 @@ def get_test_speakers():
 
 
 def get_vctk_unseen_speakers():
-    unseen_speakers = ['p252', 'p261', 'p241', 'p238', 'p243',
-                       'p294', 'p334', 'p343', 'p360', 'p362']
+    unseen_speakers = []
+    #unseen_speakers = ['p252', 'p261', 'p241', 'p238', 'p243',
+    #                   'p294', 'p334', 'p343', 'p360', 'p362']
     return unseen_speakers
 
 

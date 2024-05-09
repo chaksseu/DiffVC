@@ -1,4 +1,4 @@
-# MaskCycleGAN-VC Experiment
+# DiffVC Experiment
 
 본 레포지토리는 아래 링크의 original code를 쉽게 실험할 수 있도록 수정한 버전입니다.
 
@@ -29,15 +29,17 @@ pip install -r requirements.txt
 
 ## 데이터셋 준비
 
-아래 링크에서 학습 데이터 및 테스트 데이터를 다운받을 수 있습니다.
-https://datashare.ed.ac.uk/handle/10283/3061
+아래 링크에서 VCTK 데이터를 다운받을 수 있습니다.
+https://datashare.ed.ac.uk/handle/10283/2651
+
+데이터셋의 크기가 상당히 크기 때문에 다른 개별적인 데이터를 학습에 이용하셔도 좋습니다. (화자와 문장의 수가 많을수록 모델 성능이 올라갑니다.)
 
 1. 'data' directory 생성 및 train_dec.py의 data_dir을 '../data'로 변경
 2. 'data' directory 아래에 "wavs", "mels", "embeds" 이름의 폴더 생성
 3. 학습 시킬 raw 오디오 파일들을 "wavs" 폴더에 삽입 (wav파일은 22050으로 다운 샘플링 필요)
-4. get_mels_embeds_HEE.py 또는 inference.ipynb 파일을 이용하여 mels, embeds 계산
+4. get_mels_embeds.py 또는 inference.ipynb 파일을 이용하여 mels, embeds 계산
 
-데이터셋 폴더 구조(예시)
+완성된 데이터셋 폴더 구조(예시)
 ```
 │ ├─data
 │ │ ├─embeds
@@ -64,16 +66,9 @@ https://datashare.ed.ac.uk/handle/10283/3061
 
 ## 디코더 학습
 
-`<speaker_A_id>`를 source로 `<speaker_B_id>`를 target으로 하는 모델을 학습시킵니다. 최소 수백 epoch 이상의 학습을 권장합니다.
-
-```
-python -W ignore::UserWarning -m mask_cyclegan_vc.train --name mask_cyclegan_vc_<speaker_id_A>_<speaker_id_B> --seed 0 --save_dir results --preprocessed_data_dir vcc2018_preprocessed/vcc2018_training --speaker_A_id <speaker_A_id> --speaker_B_id <speaker_B_id> --epochs_per_save 10 --epochs_per_plot 10 --num_epochs 6172 --batch_size 1 --lr 5e-4 --decay_after 1e4 --sample_rate 22050 --num_frames 64 --max_mask_len 25 --gpu_ids 0
-```
-
-위 코드 뒤에 `--continue_train`을 추가하시면 최신 epoch에 이어서 학습이 진행됩니다.
+train_dec.py 파일 실행
 
 
 ## 모델 테스트 (오디오 생성)
 
-1. "logs_dec" directory를 생성하고, train_dec.py 파일 실행합니다.
-2. 
+inference.ipynb 파일을 통해, 학습시킨 모델을 이용하여 변환된 음성을 얻을 수 있습니다. 

@@ -84,8 +84,8 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 학습/테스트 데이터 에러 그래프 생성/확인 방법: 
 
-'logs_dec'의 train_dec.log파일을 값을 make_loss_graph.py 파일의 data에 삽입
-
+1. 'logs_dec'의 train_dec.log파일을 값을 make_loss_graph.py 파일의 data에 삽입
+2. `python make_loss_graph.py`
 
 ```
 <노트북/서버에서 각각 학습 시간 (200epoch 기준)>

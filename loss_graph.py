@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-# data에 log파일의 값을 넣으시면 됩니다.
+# logs_dec/train_dec.log파일의 값을 아래 data에 대신 넣으시면 됩니다.
+
 data = """
 Epoch 1: loss = 0.1779
 Epoch 2: loss = 0.1237

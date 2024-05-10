@@ -30,7 +30,7 @@ pip install torchaudio
 
 ## 데이터셋 준비
 
-아래 링크에서 VCTK 데이터를 다운받을 수 있습니다.
+다음 링크에서 VCTK 데이터를 다운받을 수 있습니다.
 https://datashare.ed.ac.uk/handle/10283/2651
 
 데이터셋의 크기가 상당히 크기 때문에 다른 개별적인 데이터를 학습에 이용하셔도 좋습니다. 
@@ -82,7 +82,9 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 학습된 모델 저장 위치: `'/logs_dec'`
 
-학습/테스트 데이터 에러 그래프 생성/확인 방법: 'logs_dec'의 log파일을 확인해 make_loss_graph.py 파일에 삽입
+학습/테스트 데이터 에러 그래프 생성/확인 방법: 
+
+'logs_dec'의 train_dec.log파일을 값을 make_loss_graph.py 파일의 data에 삽입
 
 
 ```

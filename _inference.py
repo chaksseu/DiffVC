@@ -157,11 +157,11 @@ def mel_spectral_subtraction(mel_synth, mel_source, spectral_floor=0.02, silence
 
 
 
-
-#vc_path = 'logs_dec/vc_200.pt'
-#src_path = 'data/p226/p226_005_mic1.wav'
-#tgt_path = 'data/p229/p229_002_mic1.wav'
-#output_path = 'converted_audio/converted.wav'
+#학습시킨 모델을 사용하여 Vocie Conversion을 진행하는 코드
+#vc_path = 'logs_dec/vc_200.pt' (학습시킨 모델 경로)
+#src_path = 'data/p226/p226_005_mic1.wav' (source wav 파일 경로)
+#tgt_path = 'data/p229/p229_002_mic1.wav' (target wav 파일 경로)
+#output_path = 'converted_audio/converted.wav' (변환된 음성이 저장될 경로)
 
 vc_path = ''
 src_path = ''

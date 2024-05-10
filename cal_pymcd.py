@@ -8,7 +8,9 @@ import pprint
 
 
 # gt_wav=f'data/{speaker}/{gt_wav}' 
-# converted_wav='converted_audio/{vc_path}/{src_path}_to_{tgt_path}.wav'
+# converted_wav='converted_audio/converted.wav'
+# A화자의 1번 문장을 Source로 B화자의 2번문장을 Target으로 Voice Conversion을 진행한 경우
+# B화자의 1번 문장(원본)이 gt_wav가 되며, 모델을 통해 변환한 음성이 converted_wav가 됩니다.
 
 gt_wav='' 
 converted_wav=''

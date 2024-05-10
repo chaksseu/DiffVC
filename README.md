@@ -73,6 +73,11 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 ## 디코더 학습
 
+`train_dec`에서 vc_path(학습시킨 디코더 경로), scr_path(source wav파일 경로), tgt_path(target wav파일 경로) 설정
+- ex) vc_path = 'logs_dec/vc_200.pt'
+- src_path = 'data/p226/p226_005_mic1.wav'
+- tgt_path = 'data/p229/p229_002_mic1.wav'
+
 `python train_dec.py`
 
 학습된 모델 저장 위치: `'/logs_dec'`
@@ -92,18 +97,19 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 `inference.ipynb, _inference.py`
 
-결과 저장 위치: `'converted_audio/{vc_name}/converted.wav'`
+결과 저장 위치: `'converted_audio/converted.wav'`
 
 MCD 확인 방법: 
-
+- target 화자가 source의 문장을 말한 wav파일이 gt_wav가 됩니다.
+- ex) A화자의 1번 문장을 Source로 B화자의 2번문장을 Target으로 Voice Conversion을 진행한 경우, B화자의 1번 문장이 gt_wav가 되며, 모델을 통해 변환한 음성이 converted_wav가 됩니다.
+- gt_wav와 converted_wav의 mcd값을 측정
 ```
-# 새로운 conda 환경 설정 및 python 파일 실행
+# 새로운 conda 환경 생성 및 python 파일 실행
 conda create -n mcd python==3.8
 conda activate mcd
 pip install pymcd tqdm
 # 'cal_pymcd.py'에서 GT path와 Converted path 설정 후
 python cal_pymcd.py
 ```
-
 
 결과 파일 재생 방법: `'/converted_audio'`에서 원하는 wav파일을 다운받아 재생

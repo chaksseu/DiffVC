@@ -42,7 +42,7 @@ beta_max = params.beta_max
 random_seed = params.seed
 test_size = params.test_size
 
-data_dir = '../data'
+data_dir = 'data'
 val_file = 'filelists/valid.txt'
 exc_file = 'filelists/exceptions_vctk.txt'
 
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     train_set = VCTKDecDataset(data_dir)
     collate_fn = VCDecBatchCollate()
     train_loader = DataLoader(train_set, batch_size=batch_size, 
-                              collate_fn=collate_fn, num_workers=4, drop_last=True)
+                              collate_fn=collate_fn, num_workers=0, drop_last=True)
 
     print('Initializing and loading models...')
     fgl = FastGL(n_mels, sampling_rate, n_fft, hop_size).cuda()

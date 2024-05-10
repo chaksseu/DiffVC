@@ -10,4 +10,3 @@ future
 tqdm
 tgt
 pexpect
-pymcd

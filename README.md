@@ -96,4 +96,13 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 MCD 확인 방법: 
 
+```
+// 새로운 conda 환경 설정 및 python 파일 실행
+conda create -n mcd python==3.8
+conda activate mcd
+pip install pymcd tqdm
+python cal_pymcd.py
+```
+
+
 결과 파일 재생 방법: `'/converted_audio'`에서 원하는 wav파일을 다운받아 재생

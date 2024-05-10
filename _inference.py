@@ -158,14 +158,14 @@ def mel_spectral_subtraction(mel_synth, mel_source, spectral_floor=0.02, silence
 
 
 
-#vc_path = 'logs_dec/vc_200.pt'
+#vc_path = f'logs_dec/vc_200.pt'
 #src_path = 'data/p226/p226_005_mic1.wav'
 #tgt_path = 'data/p229/p229_002_mic1.wav'
-#output_path = f'converted_audio/{vc_path}/{src_path}_to_{tgt_path}.wav'
+#output_path = f'converted_audio/converted.wav'
 
 vc_path = ''
 src_path = ''
 tgt_path = ''
-output_path = f'converted_audio/{vc_path}/{src_path}_to_{tgt_path}.wav'
+output_path = f'converted_audio/converted.wav'
 
 inference(vc_path, src_path, tgt_path, output_path)

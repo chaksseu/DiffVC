@@ -92,15 +92,16 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 `inference.ipynb, _inference.py`
 
-결과 저장 위치: `'converted_audio/{vc_model_path}_{src_path}_to_{tgt_path}.wav'`
+결과 저장 위치: `'converted_audio/{vc_name}/converted.wav'`
 
 MCD 확인 방법: 
 
 ```
-// 새로운 conda 환경 설정 및 python 파일 실행
+# 새로운 conda 환경 설정 및 python 파일 실행
 conda create -n mcd python==3.8
 conda activate mcd
 pip install pymcd tqdm
+# 'cal_pymcd.py'에서 GT path와 Converted path 설정 후
 python cal_pymcd.py
 ```
 

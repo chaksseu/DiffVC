@@ -74,7 +74,7 @@ Decoder만을 학습시킬 것이기에 vocoder 및 encoder는 사전학습된 �
 
 ## 디코더 학습
 
-`python train_dec.py` 실행
+`python train_dec.py`
 
 ### 학습된 모델 저장 위치: 
 `'/logs_dec'`
